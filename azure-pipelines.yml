@@ -17,13 +17,13 @@ jobs:
   - script: conda create --yes --quiet --name myEnvironment
     displayName: Create Anaconda environment
 
+  - script: python -m pip install --upgrade pip setuptools wheel
+    displayName: 'Install tools'
+
   - script: |
       call activate myEnvironment
       conda install --yes --quiet --name myEnvironment python=%PYTHON_VERSION% spacy
     displayName: Install Anaconda packages
-  
-  - script: |
-     source deactivate
-     conda env update -f environment.yml
-     source activate myEnvironment
-    displayName: Install environment file
+
+  - script: pip install -r requirements.txt
+    displayName: 'Install requirements'
