@@ -25,5 +25,5 @@ jobs:
       conda install --yes --quiet --name myEnvironment python=%PYTHON_VERSION% spacy
     displayName: Install Anaconda packages
 
-  - script: conda install -r requirements.txt
+  - script: conda install -c conda-forge requirements.txt
     displayName: 'Install conda based packages'
