@@ -20,6 +20,5 @@ jobs:
 
   - script: |
       conda create --yes --quiet --name env-from-yaml
-      call activate env-from-yaml
       conda env create -f environment.yml
     displayName: Install Anaconda packages
