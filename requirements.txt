@@ -19,8 +19,8 @@ cymem
 decorator
 dill
 docutils
-en-core-web-md
-en-core-web-sm
+spacy-model-en_core_web_sm
+spacy-model-en_core_web_md
 entrypoints
 Flask
 Flask-Cors
