@@ -14,16 +14,12 @@ jobs:
   - powershell: Write-Host "##vso[task.prependpath]$env:CONDA\Scripts"
     displayName: Add conda to PATH
 
-  - script: conda create --yes --quiet --name myEnvironment
-    displayName: Create Anaconda environment
 
   - script: python -m pip install --upgrade pip setuptools wheel
     displayName: 'Install tools'
 
   - script: |
-      call activate myEnvironment
-      conda install --yes --quiet --name myEnvironment python=%PYTHON_VERSION% spacy
+      conda create --yes --quiet --name env-from-yaml
+      call activate env-from-yaml
+      conda env create -f environment.yml
     displayName: Install Anaconda packages
-
-  - script: conda install -c conda-forge requirements.txt
-    displayName: 'Install conda based packages'
