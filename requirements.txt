@@ -61,7 +61,7 @@ pickleshare==0.7.4
 plac==0.9.6
 preshed==2.0.1
 prompt-toolkit==1.0.15
-psutil==5.4.7
+psutil==5.6.6
 pycodestyle==2.4.0
 pycparser==2.19
 pyflakes==2.0.0
